@@ -1,0 +1,68 @@
+<div class="formato-general">
+	<div class="formato-general-carta">
+        <h1 class="h3 mb-3" style="color: #ECE9DD;"><strong>Nuevo usuario</strong></h1>
+        <p style="color: green"><%= notice %></p>
+        <div class="main-cartas_container">
+            <div id="estilo_cartas_main">
+                <div class="card flex-fill">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Registrar</h5>
+                    </div>
+                    <div class="card-body">
+                        <%= render "form", user: @user %>
+                    </div>
+                    <div class="card-footer">
+                        <%= link_to "Regresar", users_path %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .formato-general {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    .formato-general-carta {
+    }
+    .card {
+        shadow: 0 200px 7px #fafafafa;
+
+    }
+</style>
+
+<!-- <div class="formato-general">
+	<h1 class="h3 mb-3"><strong>Nuevo usuario</h1>
+    <p style="color: green"><%= notice %></p>
+    <div class="main-cartas_container">
+        <div id="estilo_cartas_main">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Registrar</h5>
+                </div>
+                <div class="card-body">
+                    <%= render "form", user: @user %>
+                </div>
+                <div class="card-footer">
+                    <%= link_to "Regresar", users_path %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .formato-general {
+        height: 100vh;
+    }
+    .main-cartas_container {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+</style> -->
+

@@ -1,0 +1,36 @@
+<div class="formato-general">
+	<div class="formato-general-carta">
+        <h1 class="h3 mb-3" style="color: #ECE9DD;"><strong>Login</strong></h1>
+        <p style="color: green"><%= notice %></p>
+        <p style="color: red"><%= alert %></p>
+        <div class="main-cartas_container">
+            <div id="estilo_cartas_main">
+                <div class="card flex-fill">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Ingresar</h5>
+                    </div>
+                    <div class="card-body">
+                        <%= render "form", session: @session %>
+                    </div>
+                    <div class="card-footer">
+                        <%= link_to "Regresar", root_path %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .formato-general {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    .formato-general-carta {
+    }
+    .card {
+        shadow: 0 200px 7px #fafafafa;
+
+    }
+</style>
