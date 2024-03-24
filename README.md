@@ -14,46 +14,58 @@ Things you may want to cover:
 
 * Instalación y preparación
 
+
+## Vistas de la Aplicación
+
+Nota: La vista principal al momento de descargar el repositorio no va a aparecer con el contenido que estoy mostrando, esto debido a que por gitignore se quitan esos datos para ingresar de manera personalizada.
+
+### Vista principal
+![](https://github.com/AdrianCelayaR/RadiantRails/blob/main/public/homePage.png)
+
+### Vista una vez que estén login
+![](https://github.com/AdrianCelayaR/RadiantRails/blob/main/public/HomePageLog.png)
+
+## Instalación
 Instalar WSL2: Primero, necesitas asegurarte de que tienes WSL2 instalado en tu sistema Windows 10/11. Puedes hacerlo ejecutando la aplicación PowerShell como administrador y corriendo el comando wsl --install. Verifica que tienes la versión 2 de WSL con wsl -l -v.
 
 Instalar Ruby: Rails es un framework para Ruby, así que necesitas tener Ruby instalado. Puedes usar rbenv o rvm para manejar las versiones de Ruby. Por ejemplo, con rbenv:
 
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+> git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+> echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+> echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
-exec $SHELL
+> exec $SHELL
 
-rbenv install 2.7.2
+> rbenv install 2.7.2
 
-rbenv global 2.7.2
+> rbenv global 2.7.2
 
 
 Instalar Node.js y Yarn: Rails requiere JavaScript Runtime como Node.js y un manejador de paquetes como Yarn. Puedes instalar Node.js usando nvm (Node Version Manager) y luego Yarn con npm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
-nvm install node
+> nvm install node
 
-npm install --global yarn
+> npm install --global yarn
 
 
 Instalar Rails: Con Ruby y Node.js instalados, puedes instalar Rails con gem:
 
-gem install rails
+> gem install rails
 
-rbenv rehash
+> rbenv rehash
 
 
 Crear una nueva aplicación Rails: Una vez que tienes Rails instalado, puedes crear una nueva aplicación con:
 
-rails new mi_app
+> rails new mi_app
 
-cd mi_app
+> cd mi_app
 
 Iniciar el servidor Rails: Para iniciar tu aplicación Rails, ejecuta:
 
-rails server
+> rails server
 
-Ahora puedes acceder a tu aplicación en un navegador web en localhost:3000.
+Ahora puedes acceder a tu aplicación en un navegador web en http://localhost:3000.
