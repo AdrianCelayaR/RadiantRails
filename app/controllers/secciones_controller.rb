@@ -25,6 +25,7 @@ class SeccionesController < ApplicationController
 
     respond_to do |format|
       if @seccion.save
+        @seccion.save_multimedia(params[:contenido_field]) if params[:contenido_field]
         format.html { redirect_to seccion_url(@seccion), notice: "Seccion was successfully created." }
         format.json { render :show, status: :created, location: @seccion }
       else
@@ -65,6 +66,6 @@ class SeccionesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seccion_params
-      params.require(:seccion).permit(:nombre)
+      params.require(:seccion).permit(:nombre, :descripcion, :contenido)
     end
 end

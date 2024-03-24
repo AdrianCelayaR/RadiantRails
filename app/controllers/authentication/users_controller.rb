@@ -9,6 +9,7 @@ class Authentication::UsersController < ApplicationController
 
         if @user.save
             session[:user_id] = @user.id
+            pp session[:user_id]
             redirect_to root_path, notice: "User created successfully"
         else
             render :new, status: :unprocessable_entity

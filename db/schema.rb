@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_10_235156) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_24_045340) do
   create_table "secciones", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "descripcion"
+    t.string "contenido"
   end
 
   create_table "users", force: :cascade do |t|

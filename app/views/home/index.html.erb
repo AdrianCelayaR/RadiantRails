@@ -13,23 +13,43 @@
   </head>
 
   <body>
-    <header>
+    <header style="margin: 0 0 20px;">
         <nav class="nav-container">
             <div class="logo-box">
                 LOGO
             </div>
             <div class="parent-links">
-                <a class="social"><%= link_to "About", new_session_path, class: 'social-links' %></a>
-                <a class="social"><%= link_to "Contact", new_session_path, class: 'social-links' %></a>
+                <a class="social"><%= link_to "About", "https://www.facebook.com/profile.php?id=100095010065271", class: 'social-links', target: '_blank' %></a>
+                <a class="social"><%= link_to "Contact", "https://www.facebook.com/profile.php?id=100095010065271", class: 'social-links', target: '_blank' %></a>
                 <% if Current.user %>
                     <a class="social"><%= link_to "Gestionar secciones", secciones_path, class: 'social-links' %></a>
                 <% end %>
             </div>
             <div class="icon">
-                <a><%= link_to "Login", login_path, class: 'sm-icon' %></a>
+                <% if Current.user %>
+                    <a class="social"><%= link_to "Cerrar sesion", logout_path, class: 'sm-icon' %></a>
+                <% else %>
+                    <a><%= link_to "Login", login_path, class: 'sm-icon' %></a>
+                <% end %>
             </div>
         </nav>
     </header>
+    <% Seccion.all.each do |seccion| %>
+        <section >
+            <div class="home-top-content">
+                <h1 class="flex justify-content-center align-items-center" style="font-family: Arial, sans-serif; font-size: 70px;">
+                    <strong><%= seccion.nombre %></strong>
+                </h1>
+                <h2 class="flex justify-content-center align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 30px;">
+                    <%= seccion.descripcion %>
+                </h2>
+                <picture>
+                    <source srcset="<%= seccion.contenido.url %>" type="image/jpg">
+                    <img src="<%= seccion.contenido.url %>" alt="Imagen de la seccion" style="width: 100%;">
+                </picture>
+            </div>
+        </section>
+    <% end %>
   </body>
 </html>
 
@@ -88,9 +108,12 @@
         justify-content: space-between;
         padding-top: 32px;
     }
-
-    /* body{
-        height: 100vh;
-        padding: 5px 7% 5px;
-    } */
+    .home-top-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10rem;
+        gap: 1rem;
+    }
 </style>

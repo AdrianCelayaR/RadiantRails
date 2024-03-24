@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     resources :sessions, only: [:new, :create]
     get '/login', to: 'sessions#new', as: 'login'
+    get '/registrar', to: 'users#new', as: 'registrar'
   end
+  get '/logout', to: 'authentication/sessions#destroy', as: 'logout'
 end

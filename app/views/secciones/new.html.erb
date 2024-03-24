@@ -1,9 +1,16 @@
-<h1>New seccion</h1>
-
-<%= render "form", seccion: @seccion %>
-
-<br>
-
-<div>
-  <%= link_to "Back to secciones", secciones_path %>
+<div class="container">
+    <div class="carta">
+        <h1>New seccion</h1>
+        <div class="carta-body">
+            <%= render "form", seccion: @seccion %>
+        </div>
+        <div >
+            <%= link_to "Regresar", secciones_path, style: "color: #ECE9DD;" %>
+        </div>
+    </div>
 </div>
+
+<style>
+  .container .carta {
+  }
+</style>

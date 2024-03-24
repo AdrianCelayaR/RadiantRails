@@ -8,6 +8,7 @@ class Authentication::SessionsController < ApplicationController
         
         if @user&.authenticate(params[:password])
             session[:user_id] = @user.id
+            pp session[:user_id]
             redirect_to root_path, notice: "Session created successfully"
         else
             redirect_to new_session_path, alert: "Invalid login"

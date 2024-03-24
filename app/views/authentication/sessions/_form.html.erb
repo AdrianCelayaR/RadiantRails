@@ -1,17 +1,17 @@
 <%= form_with url: sessions_path do |form| %>
-    <div class="row">
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="inputEmail4">Login</label>
+    <div class="form">
+        <div class="campo_login">
+            <label class="form-label" for="inputEmail4"  style="color: #ECE9DD;">Login</label>
             <%= form.text_field :login, autofocus: true, class: "form-control", required: "true"%>
         </div>
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="inputPassword4">Password</label>
+        <div class="campo_password">
+            <label class="form-label" for="inputPassword4" style="color: #ECE9DD;">Password</label>
             <%= form.password_field :password, id: "user_password",class: "form-control", required: "true" %>
         </div>
-    </div>
-    <%= form.hidden_field :aprobado, value: true %>
+        <%= form.hidden_field :aprobado, value: true %>
 
-    <div class="float-end">
-        <%= form.submit  'Guardar', class: 'btn btn-success' %>
+        <div class="btn-group">
+            <%= form.submit  'Ingresar', class: 'btn-submit' %>
+        </div>
     </div>
 <% end %>

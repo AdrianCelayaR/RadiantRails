@@ -11,12 +11,24 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre %>
-  </div>
+  <div class="form">
+    <div>
+        <label class="form-label" style="color: #ECE9DD;">Titulo</label>
+        <%= form.text_field :nombre, autofocus: true, class: "form-control", required: "true"%>
+    </div>
+    <div>
+        <label class="form-label" style="color: #ECE9DD;">Descripción</label>
+        <%= form.text_area :descripcion, autofocus: true, class: "form-control", required: "true"%>
+    </div>
+    <div>
+        <%= form.label :contenido, "Contenido multimedia", class: "form-s", style: "display: block; color: #ECE9DD;" %>
+        <div class="input-group">
+          <%= form.file_field :contenido, accept: "image/jpeg, image/png, image/jpg, application/pdf, video/mp4, video/*", class: "form-control", required: true, name: "contenido_field" %>
+        </div>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="btn-group">
+        <%= form.submit  'Guardar', class: 'btn-submit' %>
+    </div>
   </div>
 <% end %>

@@ -15,8 +15,65 @@
  */
 body {
   background-color: #142B37;
+  height: 100vh;
+  width: 100%;
+  padding: 0 5% 0;
 }
 
 h1{
     color: #ECE9DD;
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .carta {
+  padding: 30px 40px;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+.container .carta h1{
+  text-align: center;
+  color: #ECE9DD;
+  font-weight: 400;
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+.btn-group{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin: 15px 0 15px;
+}
+.btn-submit{
+  background-color: #B08441;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #ECE9DD;
+}
+.btn-registrar{
+  background-color: #A09C74;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #ECE9DD;
 }
